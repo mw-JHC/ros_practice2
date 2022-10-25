@@ -168,6 +168,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named node_cpp
+
+# Build rule for target.
+node_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 node_cpp
+.PHONY : node_cpp
+
+# fast build rule for target.
+node_cpp/fast:
+	$(MAKE) -f CMakeFiles/node_cpp.dir/build.make CMakeFiles/node_cpp.dir/build
+.PHONY : node_cpp/fast
+
+#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_py
 
 # Build rule for target.
@@ -363,6 +376,19 @@ roscpp_generate_messages_lisp/fast:
 .PHONY : roscpp_generate_messages_lisp/fast
 
 #=============================================================================
+# Target rules for targets named node_cpp_rate
+
+# Build rule for target.
+node_cpp_rate: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 node_cpp_rate
+.PHONY : node_cpp_rate
+
+# fast build rule for target.
+node_cpp_rate/fast:
+	$(MAKE) -f CMakeFiles/node_cpp_rate.dir/build.make CMakeFiles/node_cpp_rate.dir/build
+.PHONY : node_cpp_rate/fast
+
+#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -479,6 +505,60 @@ gtest/fast:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
+src/my_first_node.o: src/my_first_node.cpp.o
+
+.PHONY : src/my_first_node.o
+
+# target to build an object file
+src/my_first_node.cpp.o:
+	$(MAKE) -f CMakeFiles/node_cpp.dir/build.make CMakeFiles/node_cpp.dir/src/my_first_node.cpp.o
+.PHONY : src/my_first_node.cpp.o
+
+src/my_first_node.i: src/my_first_node.cpp.i
+
+.PHONY : src/my_first_node.i
+
+# target to preprocess a source file
+src/my_first_node.cpp.i:
+	$(MAKE) -f CMakeFiles/node_cpp.dir/build.make CMakeFiles/node_cpp.dir/src/my_first_node.cpp.i
+.PHONY : src/my_first_node.cpp.i
+
+src/my_first_node.s: src/my_first_node.cpp.s
+
+.PHONY : src/my_first_node.s
+
+# target to generate assembly for a file
+src/my_first_node.cpp.s:
+	$(MAKE) -f CMakeFiles/node_cpp.dir/build.make CMakeFiles/node_cpp.dir/src/my_first_node.cpp.s
+.PHONY : src/my_first_node.cpp.s
+
+src/roscpp_rate.o: src/roscpp_rate.cpp.o
+
+.PHONY : src/roscpp_rate.o
+
+# target to build an object file
+src/roscpp_rate.cpp.o:
+	$(MAKE) -f CMakeFiles/node_cpp_rate.dir/build.make CMakeFiles/node_cpp_rate.dir/src/roscpp_rate.cpp.o
+.PHONY : src/roscpp_rate.cpp.o
+
+src/roscpp_rate.i: src/roscpp_rate.cpp.i
+
+.PHONY : src/roscpp_rate.i
+
+# target to preprocess a source file
+src/roscpp_rate.cpp.i:
+	$(MAKE) -f CMakeFiles/node_cpp_rate.dir/build.make CMakeFiles/node_cpp_rate.dir/src/roscpp_rate.cpp.i
+.PHONY : src/roscpp_rate.cpp.i
+
+src/roscpp_rate.s: src/roscpp_rate.cpp.s
+
+.PHONY : src/roscpp_rate.s
+
+# target to generate assembly for a file
+src/roscpp_rate.cpp.s:
+	$(MAKE) -f CMakeFiles/node_cpp_rate.dir/build.make CMakeFiles/node_cpp_rate.dir/src/roscpp_rate.cpp.s
+.PHONY : src/roscpp_rate.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -489,6 +569,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... node_cpp"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... install/strip"
@@ -507,6 +588,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... install"
+	@echo "... node_cpp_rate"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
@@ -516,6 +598,12 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... src/my_first_node.o"
+	@echo "... src/my_first_node.i"
+	@echo "... src/my_first_node.s"
+	@echo "... src/roscpp_rate.o"
+	@echo "... src/roscpp_rate.i"
+	@echo "... src/roscpp_rate.s"
 .PHONY : help
 
 

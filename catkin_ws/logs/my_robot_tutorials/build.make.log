@@ -1,0 +1,5 @@
+[35m[1mScanning dependencies of target node_cpp_rate[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/node_cpp_rate.dir/src/roscpp_rate.cpp.o[0m
+[ 75%] Built target node_cpp
+[100%] [32m[1mLinking CXX executable /home/jaeho/ros_practice2/catkin_ws/devel/.private/my_robot_tutorials/lib/my_robot_tutorials/node_cpp_rate[0m
+[100%] Built target node_cpp_rate

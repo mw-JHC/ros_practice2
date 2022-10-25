@@ -2,4 +2,6 @@ my_robot_tutorials
 /home/jaeho/ros_practice2/catkin_ws/devel/.private/my_robot_tutorials/cmake.lock /home/jaeho/ros_practice2/catkin_ws/devel/./cmake.lock
 /home/jaeho/ros_practice2/catkin_ws/devel/.private/my_robot_tutorials/share/my_robot_tutorials/cmake/my_robot_tutorialsConfig-version.cmake /home/jaeho/ros_practice2/catkin_ws/devel/share/my_robot_tutorials/cmake/my_robot_tutorialsConfig-version.cmake
 /home/jaeho/ros_practice2/catkin_ws/devel/.private/my_robot_tutorials/share/my_robot_tutorials/cmake/my_robot_tutorialsConfig.cmake /home/jaeho/ros_practice2/catkin_ws/devel/share/my_robot_tutorials/cmake/my_robot_tutorialsConfig.cmake
+/home/jaeho/ros_practice2/catkin_ws/devel/.private/my_robot_tutorials/lib/my_robot_tutorials/node_cpp /home/jaeho/ros_practice2/catkin_ws/devel/lib/my_robot_tutorials/node_cpp
+/home/jaeho/ros_practice2/catkin_ws/devel/.private/my_robot_tutorials/lib/my_robot_tutorials/node_cpp_rate /home/jaeho/ros_practice2/catkin_ws/devel/lib/my_robot_tutorials/node_cpp_rate
 /home/jaeho/ros_practice2/catkin_ws/devel/.private/my_robot_tutorials/lib/pkgconfig/my_robot_tutorials.pc /home/jaeho/ros_practice2/catkin_ws/devel/lib/pkgconfig/my_robot_tutorials.pc
