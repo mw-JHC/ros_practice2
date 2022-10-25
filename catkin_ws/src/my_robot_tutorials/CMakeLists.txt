@@ -140,6 +140,11 @@ target_link_libraries(node_cpp ${catkin_LIBRARIES})
 add_executable(node_cpp_rate src/roscpp_rate.cpp)
 target_link_libraries(node_cpp_rate ${catkin_LIBRARIES})
 
+add_executable(node_cpp_publisher src/roscpp_publisher.cpp)
+target_link_libraries(node_cpp_publisher ${catkin_LIBRARIES})
+
+add_executable(node_cpp_subscriber src/roscpp_subscriber.cpp)
+target_link_libraries(node_cpp_subscriber ${catkin_LIBRARIES})
 
 
 ## Rename C++ executable without prefix
