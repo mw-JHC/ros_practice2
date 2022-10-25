@@ -1,1 +1,0 @@
-/home/jaeho/ros_practice2/catkin_ws/devel/.private/my_robot_tutorials/share/my_robot_tutorials/cmake/my_robot_tutorialsConfig.cmake
