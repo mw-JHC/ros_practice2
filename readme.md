@@ -93,6 +93,10 @@ if you want to test the node, whay you created.
 $ cd catkin_ws/devel/lib/my_robot_tutorials
 $ ./node_cpp
 ```
+or 
+```console
+$ rosrun my_robot_tutorial node_cpp
+```
 ### 2 Communicate with ROS Topics
 #### 2.1 Topic
 * What is a ROS topic?  
@@ -100,4 +104,59 @@ According to ROS wiki a topic is named bus over which nodes exchange messages. I
 A publisher is a ROS node, what publish a topic. And a subscriber is a ROS node that subscribe a topic, what publisher publish. A node can be worked as a publisher and a subscriber at the same time. For example, like our smartphone. We can think  a smartphone as a node. If someone sends to our smartphone a text, our smartphone accept a text, and we can read it(Subscriber) also we can send a text to someone(publisher).   
 The small difference between smartphone SMS function and ROS Node is that publisher don't know who is subscriber and subscriber don't know too who is publisher. They just send a topic and accept it.
 
+* How to create a publisher with roscpp
 
+```c++
+#include <ros/ros.h>
+#include <std_msgs/String.h> // needed header file to use std_msgs::string
+
+int main(int argc, char **argv){
+
+    ros::init(argc, argv, "robot_news_radio_trainsmitter");
+    ros::NodeHandle nh;
+
+
+    //Declear ros Publisher
+    //ros::publisher pub =nh.advertise<{!message type!}>("{!topic_name!}", {!queue size!})
+    ros::Publisher pub = nh.advertise<std_msgs::String>("/robot_news_radio",10); // declear ros publisher 
+
+    ros::Rate rate(3);
+
+    while(ros::ok){
+        
+        std_msgs::String msg; //declear ros message 
+        msg.data = "Hi, this is publisher test!"; //input in msg.date "hi......."
+        pub.publish(msg); // "publish msg"
+        rate.sleep();
+    }
+}
+```
+you can check the published message with this console
+```console
+$ rostopic list
+$ rostopic /echo topic_name
+```
+* How to create a Subscriber with roscpp
+```c++
+#include <ros/ros.h>
+#include <std_msgs/String.h>
+
+//void {!callback funtion name!}(cont messeage type& name)
+void call_back_radio_data(const std_msgs::String& msg){
+    ROS_INFO("Message received : %s", msg.data.c_str());
+}
+
+int main(int argc, char **argv){
+    
+    ros::init(argc, argv, "smartphone");
+    ros::NodeHandle nh;
+
+    //Declear ros Subscriber with name sub
+    //ros::Subscriber sub = nh.subscribe({!"topic_name what we want to subscribe!}, {!buffer!}, {!callback function!})
+    ros::Subscriber sub = nh.subscribe("/robot_news_radio", 1000, call_back_radio_data);
+
+    ros::spin(); // ros spin will just keep the programm here, keep the not running untile we ask ti to shut down
+
+}
+```
+hier you can see that the topic name is same in the Publisher. it mean, the subscrieber read the message what the publisher send.
