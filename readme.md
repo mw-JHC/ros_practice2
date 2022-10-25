@@ -20,6 +20,7 @@ Catkin is the official bulit system for ROS
 ROS Package will allow us to separate our code into resusable block so the development and maintenance of the application will be easier
 * How to create a ROS Package?
   ```console
+  $ cd catkin_ws/src
   $ catkin_create_pkg {name of a package} {dependencies of the package}
   ```
   for example
